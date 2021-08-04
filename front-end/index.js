@@ -1,40 +1,41 @@
-const affichageName = document.querySelector("#name");
-const affichageImg = document.querySelector("#imgNorbert");
-const affichageDescription = document.querySelector("#description");
-const affichagePrice = document.querySelector("#price");
-const affichageColors = document.querySelector("#colors");
+// Initialiser le container
+let container = document.getElementById("teddies_container");
 
-console.log(affichageName);
-console.log(affichageImg);
-console.log(affichageDescription);
-console.log(affichagePrice);
-console.log(affichageColors);
+// Récupération de l'api
+fetch("http://localhost:3000/api/teddies")
+	.then((response) => response.json())
+	.then((teddies) => {
+		// Récupération des produits et affichage des données sur la page html
+		for (let i = 0; i < teddies.length; i++) {
+			// Création de div produit
+			let divcontainer = document.createElement("div");
+			divcontainer.classList.add("article");
+			divcontainer.classList.add("col-lg-5");
+			container.appendChild(divcontainer);
 
-const promise01 = fetch("http://localhost:3000/api/teddies");
+			//Ajout de l'image produit
+			let imgTeddy = document.createElement("img");
+			imgTeddy.classList.add("card-img");
+			imgTeddy.setAttribute("src", teddies[i].imageUrl);
+			divcontainer.appendChild(imgTeddy);
 
-promise01.then((response) => {
-	console.log(response);
-	const dataTeddy = response.json();
-	console.log(dataTeddy);
-	dataTeddy.then((ourson) => {
-		console.log(ourson[0]);
+			// Ajout du nom du produit h2
+			let h2Teddy = document.createElement("h2");
+			h2Teddy.classList.add("card-title");
+			h2Teddy.innerHTML = teddies[i].name;
+			divcontainer.appendChild(h2Teddy);
 
-		const nameTeddy = ourson[0].name;
-		const imgNorbert = ourson[0].imageUrl;
-		const priceNorbert = ourson[0].price;
-		const descriptionNorbert = ourson[0].description;
-		const colorsNorbert = ourson[0].colors;
+			// Ajout de la description du produit
+			let descriptionTeddy = document.createElement("p");
+			descriptionTeddy.classList.add("card-prix");
+			descriptionTeddy.innerHTML = teddies[i].description;
+			divcontainer.appendChild(descriptionTeddy);
 
-		console.log(nameTeddy);
-		console.log(imgNorbert);
-		console.log(priceNorbert);
-		console.log(descriptionNorbert);
-		console.log(colorsNorbert);
-
-		affichageName.innerHTML = nameTeddy;
-		affichageImg.innerHTML = imgNorbert;
-		affichageDescription.innerHTML = descriptionNorbert;
-		affichagePrice.innerHTML = priceNorbert;
-		affichageColors.innerHTML = colorsNorbert;
-	});
-});
+			// Ajout du prix du produit
+			let prixTeddy = document.createElement("p");
+			prixTeddy.classList.add("card-prix");
+			prixTeddy.innerHTML = teddies[i].price / 100 + " €";
+			divcontainer.appendChild(prixTeddy);
+		}
+	})
+	.catch((error) => console.log(error));
