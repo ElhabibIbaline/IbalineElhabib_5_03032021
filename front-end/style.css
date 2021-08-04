@@ -1,0 +1,63 @@
+header {
+	background-color: rgb(225, 177, 21);
+	height: 15rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 3rem;
+}
+ul {
+	list-style: none;
+	text-decoration: none;
+}
+
+footer {
+	background-color: rgb(67, 65, 63);
+	height: 15rem;
+}
+body {
+	max-width: 1300px;
+	margin: 0 auto;
+	background: rgb(211, 184, 31);
+}
+.main {
+	background: #eee;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+#teddies_container {
+	max-width: 1300px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background: rgb(211, 184, 31);
+	margin: 0 auto;
+	padding: 10px;
+}
+
+#teddies_container > div {
+	background-color: yellow;
+	padding: 7px;
+	margin: 40px;
+	width: 500px;
+	height: 470px;
+}
+
+.card-img {
+	width: 100%;
+	height: 300px;
+}
+#teddies_container > div > a {
+	padding: 10px;
+	border: 1px solid gray;
+	list-style-type: none;
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
+}
+#btn__centre {
+	text-align: center;
+	background-color: aqua;
+}
