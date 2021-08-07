@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -11,31 +11,34 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
-
 <body>
-
     <header>
-
         <div class="logo">
             Orinoco
         </div>
         <nav>
             <a href="./index.html" class="lien_product">Accueil</a>
-            <a href="./product.html" class="lien_product">Page produits</a>
             <a href="./index.html" class="lien_panier" title="Votre panier">Votre panier</a>
             <a href="#contact" class="contact" title="contact">Contact</a>
         </nav>
 
     </header>
-    <main>
-        <section class="container">
-            <h1 class="titreh1 text-white text-center pb-5">Bienvenue chez Orinoco, votre boutique en ligne!</h1>
-            <div class="row" id="teddies_container">
-            </div>
-        </section>
 
+    <main class="main pt-5 pb-1">
+        <div class="container">
+            <h1 class="col-lg-12 text-white text-center pb-5"><u>Détails du produit</u></h1>
+            <div class="row" id="teddie_container"></div>
+            <div class="bordure2" id="teddie_container2">
+                <div class="divperso">
+                    <label class="personnaliser" for="option">Personnalisé votre ourson :</label>
+                    <select id="option">
+                    </select>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- appeler les produits du server, les traiter, et les afficher -->
+
 
     <footer>
         <h2>Orinoco | Entreprise de commerce en ligne</h2>
@@ -52,8 +55,7 @@
             </a>
         </ul>
     </footer>
-
-    <script src="./index.js" defer></script>
+    <script src="./product.js" defer></script>
 
 </body>
 
