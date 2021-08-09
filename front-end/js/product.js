@@ -50,7 +50,7 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		firstoption.textContent = "Sélectionner une couleur";
 		option.appendChild(firstoption);
 
-		//boucle for pour la récupération des couleurs 
+		//boucle for pour la récupération des couleurs
 		for (let i = 0; i < ourson.colors.length; i++) {
 			let colorsOption = document.createElement("option");
 			option.classList.add("choix");

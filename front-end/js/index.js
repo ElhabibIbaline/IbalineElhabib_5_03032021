@@ -41,7 +41,7 @@ fetch("http://localhost:3000/api/teddies")
 			let linkTeddy = document.createElement("a");
 			linkTeddy.classList.add("btn");
 			linkTeddy.classList.add("btn__centre");
-			linkTeddy.href = "product.html?id_teddy=" + teddies[i]._id;
+			linkTeddy.href = "pagesHTML/product.html?id_teddy=" + teddies[i]._id;
 			linkTeddy.innerHTML = " Acheter ce produit";
 			containerArticle.appendChild(linkTeddy);
 		}
