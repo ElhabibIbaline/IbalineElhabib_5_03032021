@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Orinoco</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <header>
-    
+
         <div class="logo">
             Orinoco
         </div>
@@ -18,39 +20,56 @@
             <a href="./product.html" class="lien_product">Page produits</a>
             <a href="#contact" class="contact" title="contact">Contact</a>
         </nav>
-    
+
     </header>
 
-    <main>
-<main class="main">
-    <div class="container">
-        <section class="section_1">
-            <h1 class="titre">Articles selectionnés</h1>
-            <div class="row" id="teddies_panier">
-            </div>
-            <p id="panierTotal" class="prix"></p>
-        </section>
-        <section class="section_2">
-        </section>
-    </div>
-</main>
+    <main class="main">
+        <div class="container">
+            <section class="section_1 cadre_1">
+                <h1 class="titre">Articles selectionnés</h1>
+                <div class="row" id="teddies_panier">
+                </div>
+                <p id="panierTotal" class="prix"></p>
+            </section>
+            <section class="section_2 cadre_2">
+                <h3 class="formValidation formulaire">Formulaire de commande</h3>
+                <form class="formValidation" id="validationCommande">
+                    <div class="form-group">
+                        <label class="formT label" for="firstName">Nom:</label>
+                        <input class="formT " type="text" id="firstName" required>
+                        <label class="formT label" for="lastName">Prénom:</label>
+                        <input class="formT" type="text" id="lastName" required>
+                        <label class="formT2 label" for="address">Adresse de livraison:</label>
+                        <input class="formT2 " type="text" id="address" required>
+                        <label class="formT2 label" for="city">Ville:</label>
+                        <input class="formT2" type="text" id="city" required>
+                        <label class="formT3 label" for="email">Email:</label>
+                        <input class="formT3 label" type="email" id="email" required>
+                        <button class="formT4 btnForm btn-valide" type="submit" id="validerCommande">Valider la
+                            commande</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
 
-<footer>
-    <h2>Orinoco | Entreprise de commerce en ligne</h2>
-    <ul>
-        <a href="">
-            <li>
-                Mentions légales
-            </li>
-        </a>
-        <a href="">
-            <li id="contact">
-                Contact
-            </li>
-        </a>
-    </ul>
-</footer>
-<script src="../js/product.js" defer></script>
+
+    <footer>
+        <h2>Orinoco | Entreprise de commerce en ligne</h2>
+        <ul>
+            <a href="">
+                <li>
+                    Mentions légales
+                </li>
+            </a>
+            <a href="">
+                <li id="contact">
+                    Contact
+                </li>
+            </a>
+        </ul>
+    </footer>
+    <script src="../js/panier.js" defer></script>
 </body>
+
 </html>
