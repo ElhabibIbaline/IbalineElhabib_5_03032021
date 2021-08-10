@@ -1,7 +1,10 @@
 // Initialiser le container
 let container = document.getElementById("teddie_container");
 let option = document.getElementById("option");
+
+
 let container2 = document.getElementById("teddie_container2");
+
 
 //Récuperer id
 let params = new URLSearchParams(document.location.href.split("?")[1]);
@@ -58,5 +61,16 @@ fetch("http://localhost:3000/api/teddies/" + url)
 			colorsOption.setAttribute("value", 1);
 			colorsOption.textContent = ourson.colors[i];
 		}
+
+		//créer le bouton: ajouter au panier
+		let divcontainer2 = document.createElement("btn");
+		teddie_container2.appendChild(divcontainer2);
+
+		let lienPanier = document.createElement("a");
+		lienPanier.classList.add("btn");
+		lienPanier.classList.add("btn_centre");
+		lienPanier.innerHTML = "Ajouter au panier";
+		divcontainer2.appendChild(lienPanier);
+
 	})
 	.catch((error) => console.log(error));
