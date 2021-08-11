@@ -1,8 +1,12 @@
 // Initialiser les containers
 let containerPanier = document.getElementById("teddies_panier");
+let prixPanier = document.getElementById("panierTotal");
 
 // Création du tableau products
 let productsId = [];
+
+// création de la variable totalpanier
+let totalPanier = 0;
 
 // récupération du localStorage
 let oursonPanier = Object.keys(localStorage);
@@ -32,9 +36,19 @@ for (i=0; i < oursonPanier.length; i++) {
 	// Ajout du prix
 	let prixTeddy = document.createElement("p");
 	prixTeddy.classList.add("card-prix");
-	prixTeddy.innerHTML = "prix" + " " + ourson.price / 100 + " €";
+	prixTeddy.innerHTML = "Prix" + " " + ourson.price / 100 + " €";
 	divcontainerpanier.appendChild(prixTeddy);
+
+	    // Calcul du montant total
+    totalPanier = totalPanier + (ourson.price/100 * 1);
 
 	// Push Id de l'ourson dans le tableau products
 	productsId.push(ourson.id);
 }
+
+// Affichage du montant total de la commande
+let montantTotal = document.createElement("p");
+montantTotal.classList.add("col-lg-12");
+montantTotal.classList.add("prix");
+montantTotal.innerHTML = "Montant total de la commande" + " " + totalPanier + " €";
+prixPanier.appendChild(montantTotal);
