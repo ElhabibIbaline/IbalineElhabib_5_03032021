@@ -35,7 +35,7 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		// Ajout du prix du produit 1er paragraphe
 		let pTeddy = document.createElement("p");
 		pTeddy.classList.add("card-prix");
-		pTeddy.innerHTML = "Prix : " + " " + ourson.price / 100 + "€";
+		pTeddy.innerHTML = "Prix : " + " " + ourson.price / 100 + " €";
 		divProduct.appendChild(pTeddy);
 
 		// Ajout de la description du produit en 2eme paragaraphe
