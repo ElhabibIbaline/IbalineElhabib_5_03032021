@@ -2,7 +2,6 @@
 let container = document.getElementById("teddie_container");
 let option = document.getElementById("option");
 
-
 let container2 = document.getElementById("teddie_container2");
 
 
@@ -72,5 +71,27 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		lienPanier.innerHTML = "Ajouter au panier";
 		divcontainer2.appendChild(lienPanier);
 
+		// Ecoute de l'évènement valider la commande
+		lienPanier.onclick = function () {
+			let select = document.querySelector("select");
+			
+			let choixCouleur = select.selectedIndex;
+			if (choixCouleur == 0) {
+				alert("Vous devez personnalisé votre ourson !");
+			} else {
+				let teddiePanier = {
+					id: ourson._id,
+					name: ourson.name,
+					price: ourson.price,
+					description: ourson.description,
+					imageUrl: ourson.imageUrl,
+				};
+
+				//reconversion du js en JSON et ajout au LocalStorage
+				let oursonPanier = JSON.stringify(teddiePanier);
+				localStorage.setItem(ourson._id, oursonPanier);
+				alert((message = "vos articles ont bien été ajouté au panier"));
+			}
+		};
 	})
 	.catch((error) => console.log(error));
