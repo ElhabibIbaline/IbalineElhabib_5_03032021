@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Votre boutique en ligne</title>
-
+    <title>Orinoco</title>
     <link rel="stylesheet" href="../style/style.css">
-
 </head>
+
 <body>
     <header>
+
         <div class="logo">
             Orinoco
         </div>
         <nav>
             <a href="../index.html" class="lien_product">Accueil</a>
-            <a href="./panier.html" class="lien_panier" title="Votre panier">Votre panier</a>
-            <!-- <a href="#contact" class="contact" title="contact">Contact</a> -->
-            <a href="./confirmation.html" title="pageConfirmation">Page 4</a>
+            <a href="#contact" class="contact" title="contact">Contact</a>
         </nav>
 
     </header>
 
-    <main class="main pt-5 pb-1">
+    <!--Partie contenu-->
+    <main class="main">
         <div class="container">
-            <h1 class="col-lg-12 text-white text-center pb-5">Détails du produit</h1>
-            <div class="row" id="teddie_container"></div>
-            <div class="bordure2" id="teddie_container2">
-                <div class="divperso">
-                    <label class="personnaliser" for="option">Personnalisé votre ourson :</label>
-                    <select id="option">
-                    </select>
-                </div>
+            <h1 class="msgDeConfirmation">Votre commande a bien été prise en compte!</h1>
+            <div id="confirmation">
             </div>
         </div>
     </main>
-    <!-- appeler les produits du server, les traiter, et les afficher -->
 
 
     <footer>
@@ -55,8 +47,7 @@
             </a>
         </ul>
     </footer>
-    <script src="../js/product.js" defer></script>
-
+    <script src="../js/confirmation.js"></script>
 </body>
 
 </html>
