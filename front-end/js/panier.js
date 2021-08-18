@@ -52,3 +52,119 @@ montantTotal.classList.add("col-lg-12");
 montantTotal.classList.add("prix");
 montantTotal.innerHTML = "Montant total de la commande" + " " + totalPanier + " €";
 prixPanier.appendChild(montantTotal);
+
+
+//construire l'objet "order" avec le localStorage
+//récupérer le bouton html
+//lui associer une fonction qui va faire un fetch (POST) avec comme paramètre "order"
+//récupérer le retour du fetch pour l'afficher sur une page "confirmationCommande.html"
+
+//Création de la classe client avec la methode constructor
+class Client {
+    constructor(firstName, lastName, address, city, email) {
+    (this.firstName = firstName),
+    (this.lastName = lastName),
+    (this.address = address),
+    (this.city = city),
+    (this.email = email)     
+    }
+}
+
+//Création de l'objet client
+let form = document.querySelector('#validationCommande');
+ 
+//valider le formulaire avant de l'envoyer au serveur
+
+form.addEventListener("submit", (e) => {
+	
+	// vérifier les champs du formulaire
+
+	// vérifier la validité de firstName
+	if (
+		!document
+			.querySelector("#firstName")
+			.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)
+	) {
+		alert("Veuillez corriger le nom");
+		window.location = "panier.html";
+	}
+	// vérifier la validité de fastName
+	if (
+		!document
+			.querySelector("#lastName")
+			.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)
+	) {
+		alert("Veuillez corriger le prénom");
+		window.location = "panier.html";
+	}
+	// vérifier la validité de l'adress
+	if (
+		!document
+			.querySelector("#address")
+			.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)
+	) {
+		alert("L'adresse n'est pas valide");
+		window.location = "panier.html";
+	}
+	// vérifier la validité de la ville
+	if (
+		!document
+			.querySelector("#city")
+			.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)
+	) {
+		alert("Votre ville contient des erreurs");
+		window.location = "panier.html";
+	}
+	// vérifier la validité de l'email
+	if (
+		!document
+			.querySelector("#email")
+			.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+	) {
+		alert("Votre email contient des erreurs");
+		window.location = "panier.html";
+	}
+
+	//création du nouveau client
+	let newClient = new Client(
+		document.querySelector("#firstName").value,
+		document.querySelector("#lastName").value,
+		document.querySelector("#address").value,
+		document.querySelector("#city").value,
+		document.querySelector("#email").value,
+	
+	);
+
+	// Création de l'objet résultat
+	let resultat = {
+		contact: {
+			firstName: newClient.firstName,
+			lastName: newClient.lastName,
+			address: newClient.address,
+			city: newClient.city,
+			email: newClient.email,
+		},
+		products: productsId,
+	};
+
+	// Apelle de fetch avec order
+	fetch("http://localhost:3000/api/teddies/order", {
+		method: "POST",
+		headers: {
+			"Content-type": "application/json",
+		},
+		body: JSON.stringify(resultat),
+	})
+		//réponse du serveur
+		.then((response) => response.json())
+		.then((response) => {
+			localStorage.clear();
+			let objCommande = {
+				idCommande: response.orderId,
+				prixTotal: totalPanier,
+			};
+			let commande = JSON.stringify(objCommande);
+			localStorage.setItem("commande", commande);
+			window.location = "confirmation.html";
+		});
+});

@@ -1,1 +1,1 @@
-let containerConfirmation = document.getElementById("confirmation");
+let containerConfirmation = document.getElementById("confirmationCommande");
