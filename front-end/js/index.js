@@ -9,13 +9,19 @@ fetch("http://localhost:3000/api/teddies")
 		for (let i = 0; i < teddies.length; i++) {
 			// Création de div produit
 			let containerArticle = document.createElement("div");
-			containerArticle.classList.add("article");
-			containerArticle.classList.add("col-lg-5");
+			containerArticle.classList.add(
+				"article",
+				"col-12",
+				"col-md-6",
+				"col-lg-4",
+				"mb-3"
+			);
+			containerArticle.classList.add("card");
 			container.appendChild(containerArticle);
 
 			//Ajout de l'image produit
 			let imgTeddy = document.createElement("img");
-			imgTeddy.classList.add("card-img");
+			imgTeddy.classList.add("card-img-top");
 			imgTeddy.setAttribute("src", teddies[i].imageUrl);
 			containerArticle.appendChild(imgTeddy);
 
@@ -26,10 +32,10 @@ fetch("http://localhost:3000/api/teddies")
 			containerArticle.appendChild(h2Teddy);
 
 			// Ajout de la description du produit
-			let descriptionTeddy = document.createElement("p");
-			descriptionTeddy.classList.add("card-prix");
-			descriptionTeddy.innerHTML = teddies[i].description;
-			containerArticle.appendChild(descriptionTeddy);
+			// let descriptionTeddy = document.createElement("p");
+			// descriptionTeddy.classList.add("card-text");
+			// descriptionTeddy.innerHTML = teddies[i].description;
+			// containerArticle.appendChild(descriptionTeddy);
 
 			// Ajout du prix du produit
 			let prixTeddy = document.createElement("p");
@@ -42,7 +48,7 @@ fetch("http://localhost:3000/api/teddies")
 			linkTeddy.classList.add("btn");
 			linkTeddy.classList.add("btn__centre");
 			linkTeddy.href = "pagesHTML/product.html?id_teddy=" + teddies[i]._id;
-			linkTeddy.innerHTML = " Acheter ce produit";
+			linkTeddy.innerHTML = "En savoi plus";
 			containerArticle.appendChild(linkTeddy);
 		}
 	})

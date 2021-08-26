@@ -5,35 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orinoco</title>
+    <import boostrap></import>
+    <title>Votre boutique en ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../style/style.css">
+
 </head>
 
 <body class="bg-primary">
+
+    <!--Partie header-->
     <header>
-
-        <div class="logo">
-            Orinoco
+        <div class="container">
+            <div class="row">
+                <nav class="col navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <h1>Orinoco</h1>
+                    </a>
+                    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button> -->
+                    <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark h5" href="../index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item" id="teddyBasketCount">
+                                <a class="nav-link h5" href="pagesHTML/panier.html">
+                                    <i class="fas fa-shopping-basket"></i>
+                                    Panier
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <nav>
-            <a href="../index.html" class="lien_product">Accueil</a>
-            <a href="./product.html" class="lien_product">Page produits</a>
-            <a href="#contact" class="contact" title="contact">Contact</a>
-        </nav>
-
     </header>
 
-    <main class="main">
-        <div class="container">
+    <main class="main pt-5 pb-1">
+        <div class="container id=containerpanier">
             <section class="section_1 cadre_1">
                 <h1 class="titre">Articles selectionnés</h1>
                 <div class="row" id="teddies_panier">
                 </div>
                 <p id="panierTotal" class="prix"></p>
             </section>
-            <section class="section_2 cadre_2">
+            <section class=" row section_2 cadre_2">
                 <h3 class="formValidation formulaire">Formulaire de commande</h3>
                 <form class="formValidation" id="validationCommande">
                     <div class="form-group">
@@ -56,20 +78,23 @@
     </main>
 
 
-    <footer>
-        <h2>Orinoco | Entreprise de commerce en ligne</h2>
-        <ul>
-            <a href="">
-                <li>
-                    Mentions légales
-                </li>
-            </a>
-            <a href="">
-                <li id="contact">
-                    Contact
-                </li>
-            </a>
-        </ul>
+    <footer class="main pt-5 pb-1">
+        <div class="container d-flex justify-content-md-between">
+            <h2>Orinoco | Entreprise de commerce en ligne</h2>
+            <ul class="row d-flex">
+                <a class="nav-link text-dark h5" href="">
+                    <li >
+                        Mentions légales
+                    </li>
+                </a>
+                <a class="nav-link text-dark h5" href="">
+                    <li id="contact">
+                        Contact
+                    </li>
+                </a>
+            </ul>
+        </div>
+    
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

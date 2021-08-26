@@ -10,8 +10,7 @@ let totalPanier = 0;
 
 // récupération du localStorage
 let oursonPanier = Object.keys(localStorage);
-for (i=0; i < oursonPanier.length; i++) {
-
+for (i = 0; i < oursonPanier.length; i++) {
 	//transformer chaîne JSON en un objet JavaScript
 	let ourson = JSON.parse(localStorage.getItem(oursonPanier[i]));
 
@@ -32,15 +31,19 @@ for (i=0; i < oursonPanier.length; i++) {
 	nameTeddy.classList.add("card-title");
 	nameTeddy.innerHTML = ourson.name;
 	divcontainerpanier.appendChild(nameTeddy);
-
+	// Ajout de couleur
+	let clrseddy = document.createElement("p");
+	clrseddy.classList.add("card");
+	clrseddy.innerHTML = "Couleur :" + " " + ourson.colors[i];
+	divcontainerpanier.appendChild(clrseddy);
 	// Ajout du prix
 	let prixTeddy = document.createElement("p");
 	prixTeddy.classList.add("card-prix");
 	prixTeddy.innerHTML = "Prix" + " " + ourson.price / 100 + " €";
 	divcontainerpanier.appendChild(prixTeddy);
 
-	    // Calcul du montant total
-    totalPanier = totalPanier + (ourson.price/100 * 1);
+	// Calcul du montant total
+	totalPanier = totalPanier + (ourson.price / 100) * 1;
 
 	// Push Id de l'ourson dans le tableau products
 	productsId.push(ourson.id);
@@ -49,10 +52,10 @@ for (i=0; i < oursonPanier.length; i++) {
 // Affichage du montant total de la commande
 let montantTotal = document.createElement("p");
 montantTotal.classList.add("col-lg-12");
-montantTotal.classList.add("prix");
-montantTotal.innerHTML = "Montant total de la commande" + " " + totalPanier + " €";
+montantTotal.classList.add("prixtotal");
+montantTotal.innerHTML =
+	"Montant total de la commande" + " " + totalPanier + " €";
 prixPanier.appendChild(montantTotal);
-
 
 //construire l'objet "order" avec le localStorage
 //récupérer le bouton html
@@ -61,22 +64,21 @@ prixPanier.appendChild(montantTotal);
 
 //Création de la classe client avec la methode constructor
 class Client {
-    constructor(firstName, lastName, address, city, email) {
-    (this.firstName = firstName),
-    (this.lastName = lastName),
-    (this.address = address),
-    (this.city = city),
-    (this.email = email)     
-    }
+	constructor(firstName, lastName, address, city, email) {
+		(this.firstName = firstName),
+			(this.lastName = lastName),
+			(this.address = address),
+			(this.city = city),
+			(this.email = email);
+	}
 }
 
 //Création de l'objet client
-let form = document.querySelector('#validationCommande');
- 
+let form = document.querySelector("#validationCommande");
+
 //valider le formulaire avant de l'envoyer au serveur
 
 form.addEventListener("submit", (e) => {
-	
 	// vérifier les champs du formulaire
 
 	// vérifier la validité de firstName
@@ -131,8 +133,7 @@ form.addEventListener("submit", (e) => {
 		document.querySelector("#lastName").value,
 		document.querySelector("#address").value,
 		document.querySelector("#city").value,
-		document.querySelector("#email").value,
-	
+		document.querySelector("#email").value
 	);
 
 	// Création de l'objet résultat
