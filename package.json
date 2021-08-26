@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
     "express": "^4.16.4",
     "uuid": "^3.3.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ElhabibIbaline/IbalineElhabib_5_03032021.git"
