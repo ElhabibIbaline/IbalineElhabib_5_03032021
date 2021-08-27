@@ -43,21 +43,20 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		descriptionTeddy.innerHTML = ourson.description;
 		divProduct.appendChild(descriptionTeddy);
 
-		//Ajout de l'élément option pour le choix des couleurs
-		let firstoption = document.createElement("option");
-		firstoption.setAttribute("disabled", "disabled");
-		firstoption.setAttribute("selected", "true");
-		firstoption.setAttribute("value", 0);
-
-		firstoption.textContent = "Sélectionner une couleur";
-		option.appendChild(firstoption);
+		// // //Ajout de l'élément option pour le choix des couleurs
+		// let firstoption = document.createElement("option");
+		// firstoption.setAttribute("disabled", "disabled");
+		// firstoption.setAttribute("selected", "true");
+		// firstoption.setAttribute("value", colors);
+		// firstoption.textContent = "Sélectionner une couleur";
+		// option.appendChild(firstoption);
 
 		//boucle for pour la récupération des couleurs
 		for (let i = 0; i < ourson.colors.length; i++) {
 			let colorsOption = document.createElement("option");
 			option.classList.add("choix");
 			option.appendChild(colorsOption);
-			colorsOption.setAttribute("value", 1);
+			colorsOption.setAttribute("value", i);
 			colorsOption.textContent = ourson.colors[i];
 		}
 
@@ -83,7 +82,7 @@ fetch("http://localhost:3000/api/teddies/" + url)
 					id: ourson._id,
 					name: ourson.name,
 					price: ourson.price,
-					colors:ourson.colors, 
+					colors: document.getElementById("option").options[document.getElementById('option').selectedIndex].text,
 					description: ourson.description,
 					imageUrl: ourson.imageUrl,
 				};

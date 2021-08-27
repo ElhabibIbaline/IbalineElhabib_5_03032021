@@ -33,8 +33,8 @@ for (i = 0; i < oursonPanier.length; i++) {
 	divcontainerpanier.appendChild(nameTeddy);
 	// Ajout de couleur
 	let clrseddy = document.createElement("p");
-	clrseddy.classList.add("card");
-	clrseddy.innerHTML = "Couleur :" + " " + ourson.colors[i];
+	clrseddy.classList.add("card-title");
+	clrseddy.innerHTML = "Couleur :" + " " + ourson.colors;
 	divcontainerpanier.appendChild(clrseddy);
 	// Ajout du prix
 	let prixTeddy = document.createElement("p");
@@ -51,10 +51,9 @@ for (i = 0; i < oursonPanier.length; i++) {
 
 // Affichage du montant total de la commande
 let montantTotal = document.createElement("p");
-montantTotal.classList.add("col-lg-12");
-montantTotal.classList.add("prixtotal");
+montantTotal.classList.add("card-title");
 montantTotal.innerHTML =
-	"Montant total de la commande" + " " + totalPanier + " €";
+	"Montant total de votre commande est de :" + " " + totalPanier + " €";
 prixPanier.appendChild(montantTotal);
 
 //construire l'objet "order" avec le localStorage
