@@ -3,8 +3,10 @@ let container = document.getElementById("teddies_container");
 
 // Récupération de l'api
 fetch("http://localhost:3000/api/teddies")
-	.then((response) => response.json())
+	//Exploiter le résultat d’une promesse avec les méthodes then() et catch()
+	.then((response) => response.json()) //convertir response en données JSON  avec la methode json()):
 	.then((teddies) => {
+		//traiter les données JSON
 		// Récupération des produits et affichage des données sur la page html
 		for (let i = 0; i < teddies.length; i++) {
 			// Création de div produit
@@ -31,12 +33,6 @@ fetch("http://localhost:3000/api/teddies")
 			h2Teddy.innerHTML = teddies[i].name;
 			containerArticle.appendChild(h2Teddy);
 
-			// Ajout de la description du produit
-			// let descriptionTeddy = document.createElement("p");
-			// descriptionTeddy.classList.add("card-text");
-			// descriptionTeddy.innerHTML = teddies[i].description;
-			// containerArticle.appendChild(descriptionTeddy);
-
 			// Ajout du prix du produit
 			let prixTeddy = document.createElement("p");
 			prixTeddy.classList.add("card-prix");
@@ -52,4 +48,4 @@ fetch("http://localhost:3000/api/teddies")
 			containerArticle.appendChild(linkTeddy);
 		}
 	})
-	.catch((error) => console.log(error));
+	.catch((error) => console.log(error));//va être appelée si la promesse est rompue.

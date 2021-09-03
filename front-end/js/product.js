@@ -5,10 +5,11 @@ let option = document.getElementById("option");
 let container2 = document.getElementById("teddie_container2");
 
 //Récuperer id
+
+
 let params = new URLSearchParams(document.location.href.split("?")[1]);
 
 let url = params.get("id_teddy");
-console.log(url);
 
 fetch("http://localhost:3000/api/teddies/" + url)
 	.then((response) => response.json())
@@ -42,14 +43,6 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		descriptionTeddy.classList.add("card-description");
 		descriptionTeddy.innerHTML = ourson.description;
 		divProduct.appendChild(descriptionTeddy);
-
-		// // //Ajout de l'élément option pour le choix des couleurs
-		// let firstoption = document.createElement("option");
-		// firstoption.setAttribute("disabled", "disabled");
-		// firstoption.setAttribute("selected", "true");
-		// firstoption.setAttribute("value", colors);
-		// firstoption.textContent = "Sélectionner une couleur";
-		// option.appendChild(firstoption);
 
 		//boucle for pour la récupération des couleurs
 		for (let i = 0; i < ourson.colors.length; i++) {

@@ -132,7 +132,7 @@ form.addEventListener("submit", (e) => {
 		document.querySelector("#lastName").value,
 		document.querySelector("#address").value,
 		document.querySelector("#city").value,
-		document.querySelector("#email").value
+		document.querySelector("#email").value,
 	);
 
 	// Création de l'objet résultat
