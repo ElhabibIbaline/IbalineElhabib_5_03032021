@@ -1,8 +1,8 @@
 // Initialiser le container
 let container = document.getElementById("teddie_container");
 let option = document.getElementById("option");
-
 let container2 = document.getElementById("teddie_container2");
+
 
 //Récuperer id
 

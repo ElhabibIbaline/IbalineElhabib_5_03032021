@@ -15,7 +15,7 @@ for (i = 0; i < commande.length; i++) {
 
 	//h2: message de remerciement
 	let remerciement = document.createElement("h2");
-	remerciement.classList.add("message");
+	remerciement.classList.add("message", "p-3");
 	remerciement.innerHTML =
 		"Nous vous remerçions pour votre commande, elle sera livrée dans les meilleurs délais!";
 	confirmation.appendChild(remerciement);

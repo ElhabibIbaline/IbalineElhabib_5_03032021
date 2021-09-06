@@ -17,7 +17,7 @@ for (i = 0; i < oursonPanier.length; i++) {
 	// Création de la div
 	let divcontainerpanier = document.createElement("div");
 	divcontainerpanier.classList.add("bordure");
-	divcontainerpanier.classList.add("col-lg-5");
+	divcontainerpanier.classList.add("col-lg");
 	containerPanier.appendChild(divcontainerpanier);
 
 	//Ajout de l'image
