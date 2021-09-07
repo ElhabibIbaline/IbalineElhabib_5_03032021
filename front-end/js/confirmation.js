@@ -15,27 +15,27 @@ for (i = 0; i < commande.length; i++) {
 
 	//h2: message de remerciement
 	let remerciement = document.createElement("h2");
-	remerciement.classList.add("message", "p-3");
+	remerciement.classList.add("message","h2");
 	remerciement.innerHTML =
 		"Nous vous remerçions pour votre commande, elle sera livrée dans les meilleurs délais!";
 	confirmation.appendChild(remerciement);
 
 	//h3: le récapitulatif de la commande
 	let recapitulatif = document.createElement("h3");
-	recapitulatif.classList.add("recapitulatif");
+	recapitulatif.classList.add("recapitulatif", "mt-3", "h3");
 	recapitulatif.innerHTML = "Voici le récapitulatif de votre commande :";
 	confirmation.appendChild(recapitulatif);
 
 	//p: identifiant de la commande
 	let id = document.createElement("p");
-	id.classList.add("paragraphe");
+	id.classList.add("paragraphe", "mt-3", "mb-3","h4");
 	id.innerHTML = "Identifiant de la commande : " + recapCommande.idCommande;
 	confirmation.appendChild(id);
     console.log(id)
 
 	// p: montant total de la commande
 	let prix = document.createElement("p");
-	prix.classList.add("paragraphe");
+	prix.classList.add("paragraphe", "mt-3", "mb-3", "h4");
 	prix.innerHTML =
 		"Le prix total de votre commande est de : " + recapCommande.prixTotal + " €";
 	confirmation.appendChild(prix);

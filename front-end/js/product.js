@@ -6,7 +6,6 @@ let container2 = document.getElementById("teddie_container2");
 
 //Récuperer id
 
-
 let params = new URLSearchParams(document.location.href.split("?")[1]);
 
 let url = params.get("id_teddy");
@@ -28,26 +27,26 @@ fetch("http://localhost:3000/api/teddies/" + url)
 
 		// Ajout du nom produit h2
 		let h2Teddy = document.createElement("h2");
-		h2Teddy.classList.add("card-title");
+		h2Teddy.classList.add("card-title", "mt-3");
 		h2Teddy.innerHTML = ourson.name;
 		divProduct.appendChild(h2Teddy);
 
 		// Ajout du prix du produit 1er paragraphe
 		let pTeddy = document.createElement("p");
-		pTeddy.classList.add("card-prix");
+		pTeddy.classList.add("card-prix", "h4","mt-3");
 		pTeddy.innerHTML = "Prix : " + " " + ourson.price / 100 + " €";
 		divProduct.appendChild(pTeddy);
 
 		// Ajout de la description du produit en 2eme paragaraphe
 		let descriptionTeddy = document.createElement("p");
-		descriptionTeddy.classList.add("card-description");
+		descriptionTeddy.classList.add("card-description", "h6","pb-3", "mt-3");
 		descriptionTeddy.innerHTML = ourson.description;
 		divProduct.appendChild(descriptionTeddy);
 
 		//boucle for pour la récupération des couleurs
 		for (let i = 0; i < ourson.colors.length; i++) {
 			let colorsOption = document.createElement("option");
-			option.classList.add("choix");
+			option.classList.add("choix", "h5");
 			option.appendChild(colorsOption);
 			colorsOption.setAttribute("value", i);
 			colorsOption.textContent = ourson.colors[i];
@@ -58,7 +57,7 @@ fetch("http://localhost:3000/api/teddies/" + url)
 		teddie_container2.appendChild(divcontainer2);
 
 		let lienPanier = document.createElement("a");
-		lienPanier.classList.add("btn");
+		lienPanier.classList.add("btn", "h4");
 		// lienPanier.classList.add("btn_centre");
 		lienPanier.innerHTML = "Ajouter au panier";
 		divcontainer2.appendChild(lienPanier);
