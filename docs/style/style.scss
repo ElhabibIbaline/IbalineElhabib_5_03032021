@@ -1,0 +1,118 @@
+$theme-colors: (
+	
+	"primary":#F7F9F9,
+	"sec":#F1C40F,
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  ta: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+a {
+	list-style: none;
+	text-decoration: none;
+	font-size: 2rem;
+	color: black;
+}
+body > header > nav > div > a, .navbar-brand{
+	font-size:2rem;
+}
+
+#teddies_container > div{
+	width:25rem;
+	height:auto;
+}
+
+#teddies_container > div > img {
+	width: 100%;
+	height: 65%;
+}
+
+/*page produit*/
+#teddie_container > div > img,
+#teddies_panier > div > img {
+	width: 100%;
+	height: 85%;
+	object-fit: cover;
+	padding: .5rem 0;
+}
+
+#option{
+	padding: 10px;
+	width: 10rem;
+	margin: 2rem auto;
+}
+
+#teddie_container2 > btn > a{//btn page produit
+	padding: 10px;
+	width: 12rem;
+	font-size:1.2rem;
+	margin: 0 auto;
+	color:rgb(255, 255, 253);
+	border: 1px solid rgb(255, 255, 253);
+	list-style-type: none;
+	background-color: rgb(232, 96, 22);
+	border-radius: 5px;
+	cursor: pointer;
+	// display: inline-block;
+	// text-align: center;
+}
+
+#teddies_container a{
+	padding: 12px;
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(255, 255, 253);
+	list-style-type: none;
+	background-color: rgb(232, 96, 22);
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	width: 8rem;
+}
+
+/*page panier*/
+
+.section_2 h3 {
+	font-size: 2rem;
+}
+.formT,
+.formT2,
+.formT3 {
+	padding: 15px;
+	display: flex;
+	font-size: 1.3rem;
+}
+input {
+	width: 100%;
+	margin: 10px;
+}
+label {
+	margin: 5px;
+}
+.btn-valide {
+	padding: 15px;
+	margin: 30px auto;
+	background-color: rgb(255, 185, 7);
+	font-size: 1.5rem;
+	width: 50%;
+	color: rgb(243, 22, 22);
+}
+
+#teddies_panier > div > p.card {
+	background-color: rgb(255, 185, 7);
+}
+body > main > div > div > a{
+	padding: 10px;
+	width: 100%;
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(255, 255, 253);
+	list-style-type: none;
+	background-color: rgb(232, 96, 22);
+	border-radius: 5px;
+	cursor: pointer;
+}
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

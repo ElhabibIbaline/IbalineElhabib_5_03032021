@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre boutique en ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body class="bg-primary">
+
+    <!--Partie header-->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light text-white mb-5">
+            <div class="container container1">
+                <!-- <div class="row"> -->
+            <a class="navbar-brand logo" href="index.html">
+                <h1>Orinoco</h1>
+            </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <!--  aria-controls="navbarSupportedContent" -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark" href="../index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item" id="teddyBasketCount">
+                            <a class="nav-link" href="./panier.html">
+                                <i class="fas fa-shopping-basket"></i>
+                                Panier
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Partie header-->
+    <main class="main pt-5 pb-1">
+        <div class="container id=containerpanier">
+            <section class="section_1 cadre_1">
+                <h1 class="titre">Articles selectionnés</h1>
+                <div class="row" id="teddies_panier">
+                </div>
+                <p id="panierTotal" class="prix"></p>
+            </section>
+            <section class=" row section_2 cadre_2">
+                <h3 class="formValidation formulaire">Formulaire de commande</h3>
+                <form class="formValidation" id="validationCommande">
+                    <div class="form-group">
+                        <label class="formT label" for="firstName">Nom:</label>
+                        <input class="formT " type="text" id="firstName" required>
+                        <label class="formT label" for="lastName">Prénom:</label>
+                        <input class="formT" type="text" id="lastName" required>
+                        <label class="formT2 label" for="address">Adresse de livraison:</label>
+                        <input class="formT2 " type="text" id="address" required>
+                        <label class="formT2 label" for="city">Ville:</label>
+                        <input class="formT2" type="text" id="city" required>
+                        <label class="formT3 label" for="email">Email:</label>
+                        <input class="formT3 label" type="email" id="email" required>
+                        <button class="formT4 btnForm btn-valide" type="submit" id="validerCommande">Valider la
+                            commande</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+
+    <!--Partie footer-->
+    <footer class="container pt-5 pb-5">
+        <div class="row d-flex justify-content align-items-center">
+            <div class="col-ta-8">
+                <h2>Orinoco | Entreprise de commerce en ligne</h2>
+            </div>
+            <div class="col-ta-4 text-ta-end mt-3">
+                <a class="text-dark text-decoration-none h5 pe-3" href="#"> Mentions légales</a>
+                <a class="text-dark text-decoration-none h5" href="#"> Contact </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="../js/panier.js" defer></script>
+</body>
+
+</html>
